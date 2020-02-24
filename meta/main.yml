@@ -1,0 +1,34 @@
+galaxy_info:
+  author: Teodoro Cook
+
+  issue_tracker_url: http://github.com/nephelaiio/ansible-role-foreman-repo
+
+  license: MIT
+
+  min_ansible_version: 2.9
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+  - name:
+  - name: Ubuntu
+    versions:
+    - bionic
+
+  galaxy_tags:
+    - foreman
+    - repo
+
+dependencies:
+  - role: geerlingguy.repo-epel
+    version: 1.2.4
+    when: ansible_os_family | lower == 'redhat'
+  - role: diodonfrost.puppet_agent
+    version: 1.5.0
+    vars:
+      install_from: puppetlabs_repository
+      puppetlabs_repo_source: absent
+      puppet_agent_install: no
+      puppet_agent_configuration: false
+  

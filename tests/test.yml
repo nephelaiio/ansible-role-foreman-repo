@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  remote_user: root
+  roles:
+    - nephelaiio.foreman_repo
+  tasks:
+    - name: install foreman installer
+      package:
+        name: foreman-installer

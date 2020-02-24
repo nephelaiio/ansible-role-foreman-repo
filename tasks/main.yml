@@ -1,0 +1,30 @@
+---
+- name: install foreman yum repository
+  yum:
+    name: "https://yum.theforeman.org/releases/{{ foreman_release }}/el{{ ansible_distribution_major_version }}/{{ ansible_machine }}/foreman-release.rpm"
+    state: present
+  when: ansible_os_family | lower == 'redhat'
+
+- block:
+
+    - name: install foreman apt key
+      apt_key:
+        url: https://deb.theforeman.org/pubkey.gpg
+        state: present
+
+    - name: install foreman apt repositories
+      apt_repository:
+        repo: "{{ item }}"
+        state: present
+        filename: foreman
+      loop:
+        - "deb http://deb.theforeman.org/ {{ ansible_distribution_release }} {{ foreman_release }}"
+        - "deb http://deb.theforeman.org/ plugins {{ foreman_release }}"
+
+    - name: install ca-certificates
+      apt:
+        name: ca-certificates
+        state: latest
+
+  when: ansible_os_family | lower == 'debian'
+
