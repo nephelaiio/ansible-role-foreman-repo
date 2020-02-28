@@ -16,7 +16,7 @@ Install foreman repositories
          - role: nephelaiio.foreman_repo
            vars:
              foreman_release: 1.24
-             ```
+```
 
 ## Testing
 
