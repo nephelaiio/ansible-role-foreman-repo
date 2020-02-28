@@ -1,6 +1,9 @@
 # nephelaiio.foreman_repo
 
-Install foreman repositories
+[![Build Status](https://travis-ci.org/nephelaiio/ansible-role-foreman-repo.svg?branch=master)](https://travis-ci.org/nephelaiio/ansible-role-foreman-repo)
+[![Ansible Galaxy](http://img.shields.io/badge/ansible--galaxy-systemd--service-blue.svg)](https://galaxy.ansible.com/nephelaiio/foreman_repo/)
+
+An [ansible role](https://galaxy.ansible.com/nephelaiio/foreman_repo) to install foreman package reposiories
 
 ## Role Variables
 
