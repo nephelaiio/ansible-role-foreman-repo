@@ -14,11 +14,11 @@ An [ansible role](https://galaxy.ansible.com/nephelaiio/foreman_repo) to install
 ## Example Playbook
 
 ```
-    - hosts: foreman
-      roles:
-         - role: nephelaiio.foreman_repo
-           vars:
-             foreman_release: 1.24
+- hosts: foreman
+  roles:
+     - role: nephelaiio.foreman_repo
+       vars:
+         foreman_release: 1.24
 ```
 
 ## Testing
