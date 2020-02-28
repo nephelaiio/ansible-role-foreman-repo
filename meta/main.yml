@@ -1,8 +1,8 @@
+---
 galaxy_info:
+  role_name: foreman_repo
   author: Teodoro Cook
-
-  issue_tracker_url: http://github.com/nephelaiio/ansible-role-foreman-repo
-
+  description: An Ansible role to configure foreman package repositories
   license: MIT
 
   min_ansible_version: 2.9
@@ -11,7 +11,6 @@ galaxy_info:
   - name: EL
     versions:
     - 7
-  - name:
   - name: Ubuntu
     versions:
     - bionic
