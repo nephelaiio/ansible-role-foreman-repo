@@ -24,7 +24,7 @@
     - name: install ca-certificates
       apt:
         name: ca-certificates
-        state: latest
+        state: present
 
   when: ansible_os_family | lower == 'debian'
 
