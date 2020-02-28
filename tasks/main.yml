@@ -27,4 +27,3 @@
         state: present
 
   when: ansible_os_family | lower == 'debian'
-
