@@ -7,6 +7,10 @@
 
 - block:
 
+    - name: install gnupg
+      apt:
+        name: gnupg
+
     - name: install foreman apt key
       apt_key:
         url: https://deb.theforeman.org/pubkey.gpg
