@@ -1,10 +1,4 @@
 ---
-- name: install foreman yum repository
-  yum:
-    name: "https://yum.theforeman.org/releases/{{ foreman_release }}/el{{ ansible_distribution_major_version }}/{{ ansible_machine }}/foreman-release.rpm"
-    state: present
-  when: ansible_os_family | lower == 'redhat'
-
 - block:
 
     - name: install gnupg
@@ -31,3 +25,18 @@
         state: present
 
   when: ansible_os_family | lower == 'debian'
+
+- name: install puppet
+  include_role:
+    name: diodonfrost.puppet_agent
+  vars:
+    install_from: puppetlabs_repository
+    puppetlabs_repo_source: absent
+    puppet_agent_install: no
+    puppet_agent_configuration: false
+
+- name: install foreman yum repository
+  yum:
+    name: "https://yum.theforeman.org/releases/{{ foreman_release }}/el{{ ansible_distribution_major_version }}/{{ ansible_machine }}/foreman-release.rpm"
+    state: present
+  when: ansible_os_family | lower == 'redhat'

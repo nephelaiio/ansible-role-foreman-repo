@@ -25,9 +25,4 @@ dependencies:
     when: ansible_os_family | lower == 'redhat'
   - role: diodonfrost.puppet_agent
     version: 1.5.0
-    vars:
-      install_from: puppetlabs_repository
-      puppetlabs_repo_source: absent
-      puppet_agent_install: no
-      puppet_agent_configuration: false
-  
+    when: false
