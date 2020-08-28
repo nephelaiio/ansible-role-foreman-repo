@@ -4,6 +4,7 @@
     - name: install gnupg
       apt:
         name: gnupg
+        update_cache: yes
 
     - name: install foreman apt key
       apt_key:
