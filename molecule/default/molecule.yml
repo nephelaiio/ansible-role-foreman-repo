@@ -9,8 +9,10 @@ platforms:
     pre_build_image: true
   - name: bionic
     image: ubuntu:bionic
+    pre_build_image: true
   - name: buster
     image: debian:buster
+    pre_build_image: true
 provisioner:
   name: ansible
 verifier:
